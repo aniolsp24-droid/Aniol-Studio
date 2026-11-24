@@ -41,7 +41,14 @@
         <div class="transport-right"><button class="soft-button" id="metronomeBtn">♩ <span>Metrònom</span><b id="metroState">OFF</b></button><button class="soft-button" id="addTrackBtn">＋ <span>Afegeix pista</span></button></div>
       </section>
 
-      <section class="workspace panel">
+
+      <section class="instrument-panel panel">
+        <div class="instrument-heading"><div><span class="eyebrow">SALA D'INSTRUMENTS</span><h2>Tria el teu so</h2><p>Instruments virtuals per tocar amb el ratolí o el teclat de l'ordinador.</p></div><div class="instrument-actions"><label class="instrument-select">INSTRUMENT <select id="instrumentSelect"><optgroup label="Teclats i sintetitzadors"><option value="piano">Piano acústic</option><option value="electric">Piano elèctric</option><option value="organ">Òrgan</option><option value="synth">Sintetitzador lead</option><option value="pad">Synth pad</option></optgroup><optgroup label="Cordes"><option value="guitar">Guitarra elèctrica</option><option value="acoustic">Guitarra acústica</option><option value="bass">Baix</option><option value="strings">Cordes</option></optgroup><optgroup label="Altres sons"><option value="brass">Metalls</option><option value="flute">Flauta</option></optgroup></select></label><button class="soft-button instrument-record" id="instrumentRecord">● Grava notes</button></div></div>
+        <div class="instrument-toolbar"><span id="instrumentName">PIANO ACÚSTIC</span><span id="recordHint">Prem les tecles A W S E D F T G Y H U J per tocar.</span><button class="soft-button compact" id="finishInstrumentRecord" disabled>Acaba i crea pista</button></div>
+        <div class="keyboard-wrap"><div class="piano-keyboard" id="pianoKeyboard" aria-label="Teclat musical"></div></div>
+        <div class="drum-section"><div><strong>🥁 Bateria electrònica</strong><span>També pots tocar els pads amb el ratolí.</span></div><div class="drum-pads" id="drumPads"></div></div>
+      </section>
+\n      <section class="workspace panel">
         <div class="workspace-head"><div><span class="eyebrow">ARRANJAMENT</span><h2>La teva sessió</h2></div><div class="workspace-tools"><span class="zoom-label">ZOOM</span><button class="zoom-button" id="zoomOut">−</button><button class="zoom-button" id="zoomIn">＋</button><button class="soft-button compact" id="uploadBtn">↑ Importa àudio</button><input id="audioInput" type="file" accept="audio/*" multiple hidden></div></div>
         <div class="timeline-wrap">
           <div class="track-sidebar"><div class="ruler-spacer">PISTES <span id="trackCount">02</span></div><div id="trackControls"></div></div>
