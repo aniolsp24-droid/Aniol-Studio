@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111217" />
+  <meta name="description" content="Aniol Studio — crea, grava i barreja música al navegador." />
+  <title>Aniol Studio — Music workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Aniol Studio inici">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>Aniol<span class="brand-light">Studio</span></span>
+      </a>
+      <div class="project-name"><span class="status-dot"></span><span id="projectTitle">Projecte sense títol</span><button class="icon-button tiny" id="renameBtn" title="Canvia el nom">✎</button></div>
+      <div class="top-actions"><span class="save-state" id="saveState">Desat localment</span><button class="share-button" id="exportBtn">↓ <span>Exporta mescla</span></button><button class="avatar" title="Perfil">A</button></div>
+    </header>
+
+    <main>
+      <section class="hero-row">
+        <div><div class="eyebrow">ESTUDI DE PRODUCCIÓ · 01</div><h1>El teu espai per <span>crear.</span></h1><p class="subtitle">Grava una idea, construeix capes i troba el teu so.</p></div>
+        <div class="session-card"><span class="session-label">SESSIÓ ACTUAL</span><strong id="sessionTime">00:00</strong><span class="session-foot"><i></i> Estudi preparat</span></div>
+      </section>
+
+      <section class="transport panel">
+        <div class="transport-main">
+          <button class="transport-button play" id="playBtn" aria-label="Reprodueix">▶</button>
+          <button class="transport-button" id="stopBtn" aria-label="Atura">■</button>
+          <button class="transport-button" id="recordBtn" aria-label="Grava"><span class="record-dot"></span></button>
+          <div class="time-display"><strong id="playheadTime">00:00.00</strong><span>POSICIÓ</span></div>
+          <div class="transport-divider"></div>
+          <label class="bpm-control"><span>BPM</span><input id="bpmInput" type="number" min="40" max="240" value="120"></label>
+          <label class="bpm-control"><span>COMPÀS</span><select id="meterSelect"><option>4/4</option><option>3/4</option><option>6/8</option></select></label>
+        </div>
+        <div class="transport-right"><button class="soft-button" id="metronomeBtn">♩ <span>Metrònom</span><b id="metroState">OFF</b></button><button class="soft-button" id="addTrackBtn">＋ <span>Afegeix pista</span></button></div>
+      </section>
+
+      <section class="workspace panel">
+        <div class="workspace-head"><div><span class="eyebrow">ARRANJAMENT</span><h2>La teva sessió</h2></div><div class="workspace-tools"><span class="zoom-label">ZOOM</span><button class="zoom-button" id="zoomOut">−</button><button class="zoom-button" id="zoomIn">＋</button><button class="soft-button compact" id="uploadBtn">↑ Importa àudio</button><input id="audioInput" type="file" accept="audio/*" multiple hidden></div></div>
+        <div class="timeline-wrap">
+          <div class="track-sidebar"><div class="ruler-spacer">PISTES <span id="trackCount">02</span></div><div id="trackControls"></div></div>
+          <div class="timeline-scroll" id="timelineScroll"><div class="timeline-inner" id="timelineInner">
+            <div class="ruler" id="ruler"></div>
+            <div class="playhead" id="playhead"><span></span></div>
+            <div id="lanes"></div>
+          </div></div>
+        </div>
+        <div class="workspace-foot"><span><i class="legend-audio"></i> Àudio importat / gravat</span><span id="durationLabel">Durada de la sessió: 00:00</span><span>Canvis desats al navegador</span></div>
+      </section>
+      <section class="bottom-grid">
+        <article class="tip-card"><div class="tip-icon">✦</div><div><strong>Consell d'estudi</strong><p>Comença amb una idea curta. Afegeix-hi capes i ajusta els volums per construir el teu so.</p></div></article>
+        <article class="master-card"><div><span class="eyebrow">SORTIDA PRINCIPAL</span><strong>Master</strong></div><div class="master-meter"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><label>VOLUM <input id="masterVolume" type="range" min="0" max="1" step=".01" value=".85"></label></article>
+      </section>
+    </main>
+    <footer><span>ANIOL STUDIO <b>·</b> BETA 0.1</span><span>Fet per crear, no per competir.</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
